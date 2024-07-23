@@ -284,7 +284,7 @@
 
 // myfunction()
 
- //scoping 
+//scoping 
 
 // function myFunc() {
 //   if (true) {
@@ -336,7 +336,7 @@
 
 
 //advance array
-let arr=[2,3,4,5,1]
+let arr = [2, 3, 4, 5, 1]
 //find
 // let output =arr.find((value,index=>3));
 // console.log(output);
@@ -350,7 +350,7 @@ let arr=[2,3,4,5,1]
 
 //  let ans=products.find((value,index)=>!value.instoc);
 //  console.log(ans);
- 
+
 //  //some
 //  let output =arr.find((value,index=>3));
 // console.log(output);
@@ -395,7 +395,7 @@ let arr=[2,3,4,5,1]
 //  display.innertext=ans;
 //  document.doctype.prepend(display);
 
- //reduce
+//reduce
 //  let NewArr=[1,2,4,5,6]
 //  let output =arr.reduce((accum,curValue=>accum+curValue));
 // console.log(output);
@@ -410,75 +410,122 @@ let arr=[2,3,4,5,1]
 //  let ans=products.reduce((total,curValue=>total+curValue.price));
 //  console.log(ans);
 
- //let heading=document.getElementById("heading");
+//let heading=document.getElementById("heading");
 // //let ox=document.getElementById("ox1");
- //let tnClic =document.getElementById("tnClic")
+//let tnClic =document.getElementById("tnClic")
 
- //tnClic.addEventListener("click",)
+//tnClic.addEventListener("click",)
 
 
 //setInterval(()=>{
-  //  console.log("i love java");
+//  console.log("i love java");
 //},100);
 
 // console intervalId = setInterval(()=>{
-   // console.log("I love java");
- //},100);
+// console.log("I love java");
+//},100);
 // function updateClock(){
-  //  const clock =document.querySelector(".clock")
-    //const now = new Date()
-    //const hours = now.getHours().toString().padStart(2,"0");
-    //const minutes = now.getMinuts().toString().padStart(2,"0");
-    //const seconds = now.getSecponds().toString().padStart(2,"0");
-    
-    //clock.innerHTML = `${hours}:${minutes}:${seconds}`;
- //}
- //setInterval(updateClock, 1000);
+//  const clock =document.querySelector(".clock")
+//const now = new Date()
+//const hours = now.getHours().toString().padStart(2,"0");
+//const minutes = now.getMinuts().toString().padStart(2,"0");
+//const seconds = now.getSecponds().toString().padStart(2,"0");
 
- //OOP
- //function Person(name,age,address){
-  //this.name=name;
-  //this.age=age;
-  //this.address=address;
+//clock.innerHTML = `${hours}:${minutes}:${seconds}`;
+//}
+//setInterval(updateClock, 1000);
 
-  //this.greeting=function(){
-    //let greet=`Hello my name is ${this.name},i am ${this.age},years is ${this.address} `
-    //return greet;
+//OOP
+//function Person(name,age,address){
+//this.name=name;
+//this.age=age;
+//this.address=address;
 
-  //};
+//this.greeting=function(){
+//let greet=`Hello my name is ${this.name},i am ${this.age},years is ${this.address} `
+//return greet;
 
- //}
- //Person1= new Person("Ram Thapa",23,"Dilliazar");
- //Person2= new Person("sita",20,"Maitidevi");
+//};
 
- //console.log(Person1,person2);
- //console.log(person1.greeting());
+//}
+//Person1= new Person("Ram Thapa",23,"Dilliazar");
+//Person2= new Person("sita",20,"Maitidevi");
+
+//console.log(Person1,person2);
+//console.log(person1.greeting());
 
 
- function ankAccount(customerName ,balance=0){
-  this.customerName=customerName;
-  this.balance=balance
-  this.accountNumber=Date.now();
+//  function ankAccount(customerName ,balance=0){
+//   this.customerName=customerName;
+//   this.balance=balance
+//   this.accountNumber=Date.now();
 
- 
- this.deposit = function(amount){
-  this.balance +=amount
- };
 
- this,withdraw=function(amount){
-  this,balance= amount;
- };
- }
+//  this.deposit = function(amount){
+//   this.balance +=amount
+//  };
+
+//  this,withdraw=function(amount){
+//   this,balance= amount;
+//  };
+//  }
 //  const ramAccount = new ankAccount("dipesh",1000);
 //  ramAccount.deposit(50000);
 
 //  console.log(ramAccount,);
 
-const addforms=document.querySelector("#addform");
-const customerName=document.querySelector("#customername");
-const balance=document.querySelector("#balance");
+// const addforms=document.querySelector("#addform");
+// const customerName=document.querySelector("#customername");
+// const balance=document.querySelector("#balance");
 
-let accounts=[];
-addforms.addEventListener("")
+// let accounts=[];
+// addforms.addEventListener("")
+
+//Class in javaScript
+
+class BankAccount {
+  constructor(customerName, balance = 0) {
+    this.customerName = customerName;
+    this.balance = balance;
+    this.accountNumber = Math.floor(Math.random() + 1000000000);
+  }
+  deposite(amount) {
+    this.balance += amount;
+  }
+
+  withdraw(amount) {
+    this.balance -= amount;
+  }
+}
+
+class CurrentAccount  extends BankAccount {
+  constructor(customerName, balance) {
+    super(customerName,balance);
+   
+  }
+taeusinessLoan(amount,taxRate){
+  let ans=amount+(amount+taxRate)/100;
+  console.log(`Interset sahil loan is = ${ans}`);
+}
+}
+class SavingAccount  extends BankAccount {
+  constructor(customerName, balance) {
+    super(customerName,balance);
+   
+  }
+taeperLoan(amount,taxRate){
+  let ans=amount+(amount+taxRate)/100;
+  console.log(`Interset sahil loan is = ${ans}`);
+}
+}
+const ramAccount = new SavingAccount ("Ram Thapa", 4000);
+const shayam = new SavingAccount("shayam thakar", 4000);
+
+// const ramAccount = new BankAccount("Ram Thapa", 4000);
+// const shayam = new BankAccount("shayam thakar", 4000);
+ramAccount.deposite(3000);
+ramAccount.taeperLoan(3000);
+
+console.log(ramAccount, shayam);
 
 

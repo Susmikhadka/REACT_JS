@@ -483,49 +483,101 @@ let arr = [2, 3, 4, 5, 1]
 
 //Class in javaScript
 
-class BankAccount {
-  constructor(customerName, balance = 0) {
-    this.customerName = customerName;
-    this.balance = balance;
-    this.accountNumber = Math.floor(Math.random() + 1000000000);
-  }
-  deposite(amount) {
-    this.balance += amount;
-  }
+// class BankAccount {
+//   constructor(customerName, balance = 0) {
+//     this.customerName = customerName;
+//     this.balance = balance;
+//     this.accountNumber = Math.floor(Math.random() + 1000000000);
+//   }
+//   deposite(amount) {
+//     this.balance += amount;
+//   }
 
-  withdraw(amount) {
-    this.balance -= amount;
-  }
-}
+//   withdraw(amount) {
+//     this.balance -= amount;
+//   }
+// }
 
-class CurrentAccount  extends BankAccount {
-  constructor(customerName, balance) {
-    super(customerName,balance);
+// class CurrentAccount  extends BankAccount {
+//   constructor(customerName, balance) {
+//     super(customerName,balance);
    
-  }
-taeusinessLoan(amount,taxRate){
-  let ans=amount+(amount+taxRate)/100;
-  console.log(`Interset sahil loan is = ${ans}`);
-}
-}
-class SavingAccount  extends BankAccount {
-  constructor(customerName, balance) {
-    super(customerName,balance);
+//   }
+// taeusinessLoan(amount,taxRate){
+//   let ans=amount+(amount+taxRate)/100;
+//   console.log(`Interset sahil loan is = ${ans}`);
+// }
+// }
+// class SavingAccount  extends BankAccount {
+//   constructor(customerName, balance) {
+//     super(customerName,balance);
    
-  }
-taeperLoan(amount,taxRate){
-  let ans=amount+(amount+taxRate)/100;
-  console.log(`Interset sahil loan is = ${ans}`);
-}
-}
-const ramAccount = new SavingAccount ("Ram Thapa", 4000);
-const shayam = new SavingAccount("shayam thakar", 4000);
+//   }
+// taeperLoan(amount,taxRate){
+//   let ans=amount+(amount+taxRate)/100;
+//   console.log(`Interset sahil loan is = ${ans}`);
+// }
+// }
+// const ramAccount = new SavingAccount ("Ram Thapa", 4000);
+// const shayam = new SavingAccount("shayam thakar", 4000);
 
-// const ramAccount = new BankAccount("Ram Thapa", 4000);
+// // const ramAccount = new BankAccount("Ram Thapa", 4000);
+// // const shayam = new BankAccount("shayam thakar", 4000);
+// ramAccount.deposite(3000);
+// ramAccount.taeperLoan(3000);
+
+// console.log(ramAccount, shayam);
+
+//encapsulatin
+// class BankAccount {
+//   customerName;
+//   #balance=0;
+//   accountNumber;
+//   constructor(customerName, balance = 0) {
+//     this.customerName = customerName;
+//     this.#balance = balance;
+//     this.accountNumber = Data.new();
+//   }
+//   setBalance(amount){
+//     this.#balance=amount;
+//   }
+//   getBalance(amount){
+//     this.#balance=amount;
+//   }
+
+//   deposite(amount) {
+//     this.#balance += amount;
+//   }
+
+//   withdraw(amount) {
+//     this.#balance -= amount;
+//   }
+// }
+// setBalance(amount){
+//   this.#balance=amount
+// }
+
+// const ramAccount = new BankAccount ("Ram Thapa", 4000);
 // const shayam = new BankAccount("shayam thakar", 4000);
-ramAccount.deposite(3000);
-ramAccount.taeperLoan(3000);
 
-console.log(ramAccount, shayam);
+// console.log(ramAccount, shayam);
 
+class User{
+  
+  constructor(name,address,age){
+    this.name=name;
+    this.address=address;
+    this.age=age;
+  }
+  static compareyAge(a,n){
+    return a.age-n.age
+  }
+}
 
+let user1=new User("sita devi","udyapur",80);
+let user2=new User(" devi","delhi",60);
+let user3=new User("syami","nepal",50);
+
+const users=[user1,user2,user3];
+users.sort(user.compareyAge);
+console.log(users);

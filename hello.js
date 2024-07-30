@@ -501,7 +501,7 @@ let arr = [2, 3, 4, 5, 1]
 // class CurrentAccount  extends BankAccount {
 //   constructor(customerName, balance) {
 //     super(customerName,balance);
-   
+
 //   }
 // taeusinessLoan(amount,taxRate){
 //   let ans=amount+(amount+taxRate)/100;
@@ -511,7 +511,7 @@ let arr = [2, 3, 4, 5, 1]
 // class SavingAccount  extends BankAccount {
 //   constructor(customerName, balance) {
 //     super(customerName,balance);
-   
+
 //   }
 // taeperLoan(amount,taxRate){
 //   let ans=amount+(amount+taxRate)/100;
@@ -562,22 +562,98 @@ let arr = [2, 3, 4, 5, 1]
 
 // console.log(ramAccount, shayam);
 
-class User{
-  
-  constructor(name,address,age){
-    this.name=name;
-    this.address=address;
-    this.age=age;
-  }
-  static compareyAge(a,n){
-    return a.age-n.age
-  }
+// class User{
+
+//   constructor(name,address,age){
+//     this.name=name;
+//     this.address=address;
+//     this.age=age;
+//   }
+//   static compareyAge(a,n){
+//     return a.age-n.age
+//   }
+// }
+
+// let user1=new User("sita devi","udyapur",80);
+// let user2=new User(" devi","delhi",60);
+// let user3=new User("syami","nepal",50);
+
+// const users=[user1,user2,user3];
+// users.sort(user.compareyAge);
+// console.log(users);
+
+// Dipesh Mahato
+//callback
+
+
+// let product = [];
+// let AddProduct = () => {
+//   setTimeout(() => {
+//     product.push(
+//       { id: 1, name: "Dipesh", price: 8000, instock: true },
+//       { id: 2, name: "surya", price: 1000, instock: false }
+//     );
+//     console.log(product);
+//   }, 4000);
+// };
+
+// const DisplayProduct = () => {
+//   setTimeout(() => {
+//     product.forEach((product) => {
+//       const h1 = document.createElement("h1");
+//       h1.innerText = product.name;
+//       document.body.append(h1);
+//     });
+//   },1000);
+// };
+
+// AddProduct();
+
+//promise
+// const res = new Promise((resolve,rejected)=>{
+//   resolve("Promise Fulfilled");
+// })
+// const res = new Promise((resolve, rejected) => {
+//   let success = true;
+//   if(success){
+//     resolve("promissed Fulfilled")
+//     }else{
+//       rejected("Promissed rejection")
+//     }
+// })
+// res.then((param) => console.log(param)).catch((error) => console.log(error))
+
+// const fetchData = () => {
+//   fetch("https://catfact.ninja/fact")
+//     .then((res) => res.json())
+//     .then((data) => {
+//       const h1 = document.createElement("h1")
+//       h1.innerText = data.fact
+//       document.body.appendChild(h1)
+//     })
+//     .catch((error) => console.log(error))
+
+// }
+// fetchData();
+
+
+const fetchData=async()=>{
+  try{
+ const res=  await fetch('https://catfact.ninja/facts');
+ const data=await res.json()
+ const facts=data.data;
+ facts.forEach((value,index) => {
+const h1= document.createElement("h1");
+h1.inneraText = value.fact;
+document.body.append(h1);
+ });
+//  const h1 = document.createElement("h1")
+//    h1.innerText = data.fact
+//    document.body.append(h1)
+}catch(error){
+  console.log(error);
 }
+};
 
-let user1=new User("sita devi","udyapur",80);
-let user2=new User(" devi","delhi",60);
-let user3=new User("syami","nepal",50);
+fetchData();
 
-const users=[user1,user2,user3];
-users.sort(user.compareyAge);
-console.log(users);
